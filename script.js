@@ -1,8 +1,15 @@
+// Function to toggle dark mode
 function toggleDarkMode() {
   document.body.classList.toggle('dark-mode');
+  // Track dark mode toggle event
+  dataLayer.push({
+    event: 'dark_mode_toggle'
+  });
 }
 
-function validateForm() {
+// Function to validate form
+function validateForm(event) {
+  event.preventDefault(); // Prevent form submission for demo purposes
   const name = document.getElementById('name').value.trim();
   const email = document.getElementById('email').value.trim();
   const message = document.getElementById('message').value.trim();
@@ -13,5 +20,37 @@ function validateForm() {
   }
 
   alert('Form submitted successfully!');
-  return false; // prevent actual submission for demo
+  // Track form submission event
+  dataLayer.push({
+    event: 'form_submission',
+    formData: {
+      name: name,
+      email: email,
+      message: message
+    }
+  });
+  return false;
 }
+
+// Event listeners
+document.getElementById('darkModeToggle').addEventListener('click', toggleDarkMode);
+document.getElementById('contactForm').addEventListener('submit', validateForm);
+
+// Track video play event
+document.getElementById('sampleVideo').addEventListener('play', function() {
+  dataLayer.push({
+    event: 'video_play',
+    videoTitle: 'Sample Video'
+  });
+});
+
+// Track scroll depth event
+window.addEventListener('scroll', function() {
+  const scrollDepth = Math.round((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100);
+  if (scrollDepth >= 90) {
+    dataLayer.push({
+      event: 'scroll_depth',
+      scrollDepth: scrollDepth
+    });
+  }
+});
