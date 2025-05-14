@@ -3,8 +3,10 @@ function toggleDarkMode() {
   document.body.classList.toggle('dark-mode');
   // Track dark mode toggle event
   gtag('event', 'dark_mode_toggle', {
-   agement',
-    'event_label': 'Dark Mode Toggle'
+    'event_category': 'engagement',
+    'event_label': 'Dark Mode Toggle',
+    'page_section': 'Header',
+    'button_type': 'Dark Mode Toggle'
   });
 }
 
@@ -25,11 +27,8 @@ function validateForm(event) {
   gtag('event', 'form_submission', {
     'event_category': 'engagement',
     'event_label': 'Contact Form',
-    'form_data': {
-      'name': name,
-      'email': email,
-      'message': message
-    }
+    'page_section': 'Get In Touch',
+    'form_field': 'Name, Email, Message'
   });
   return false;
 }
@@ -39,10 +38,20 @@ document.getElementById('darkModeToggle').addEventListener('click', toggleDarkMo
 document.getElementById('contactForm').addEventListener('submit', validateForm);
 
 // Track video play event
-document.getElementById('sampleVideo').addEventListener('play', function() {
-  gtag('event', 'video_play', {
-    'event_category': 'engagement',
-    'event_label': 'Sample Video'
+document.querySelector('iframe').addEventListener('load', function() {
+  const iframe = this;
+  const player = new YT.Player(iframe, {
+    events: {
+      'onStateChange': function(event) {
+        if (event.data == YT.PlayerState.PLAYING) {
+          gtag('event', 'video_play', {
+            'event_category': 'engagement',
+            'event_label': 'Introduction Video',
+            'page_section': 'Introduction Video'
+          });
+        }
+      }
+    }
   });
 });
 
@@ -53,7 +62,18 @@ window.addEventListener('scroll', function() {
     gtag('event', 'scroll_depth', {
       'event_category': 'engagement',
       'event_label': 'Scroll Depth',
-      'scroll_depth': scrollDepth
+      'scroll_depth': scrollDepth,
+      'page_section': 'Entire Page'
     });
   }
+});
+
+// Track "Click Me" button event
+document.querySelector('.fancy-button').addEventListener('click', function() {
+  gtag('event', 'button_click', {
+    'event_category': 'engagement',
+    'event_label': 'Fancy Button',
+    'page_section': 'Fancy Button',
+    'button_type': 'Fancy Button'
+  });
 });
