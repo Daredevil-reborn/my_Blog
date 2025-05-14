@@ -2,8 +2,9 @@
 function toggleDarkMode() {
   document.body.classList.toggle('dark-mode');
   // Track dark mode toggle event
-  dataLayer.push({
-    event: 'dark_mode_toggle'
+  gtag('event', 'dark_mode_toggle', {
+   agement',
+    'event_label': 'Dark Mode Toggle'
   });
 }
 
@@ -21,12 +22,13 @@ function validateForm(event) {
 
   alert('Form submitted successfully!');
   // Track form submission event
-  dataLayer.push({
-    event: 'form_submission',
-    formData: {
-      name: name,
-      email: email,
-      message: message
+  gtag('event', 'form_submission', {
+    'event_category': 'engagement',
+    'event_label': 'Contact Form',
+    'form_data': {
+      'name': name,
+      'email': email,
+      'message': message
     }
   });
   return false;
@@ -38,9 +40,9 @@ document.getElementById('contactForm').addEventListener('submit', validateForm);
 
 // Track video play event
 document.getElementById('sampleVideo').addEventListener('play', function() {
-  dataLayer.push({
-    event: 'video_play',
-    videoTitle: 'Sample Video'
+  gtag('event', 'video_play', {
+    'event_category': 'engagement',
+    'event_label': 'Sample Video'
   });
 });
 
@@ -48,9 +50,10 @@ document.getElementById('sampleVideo').addEventListener('play', function() {
 window.addEventListener('scroll', function() {
   const scrollDepth = Math.round((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100);
   if (scrollDepth >= 90) {
-    dataLayer.push({
-      event: 'scroll_depth',
-      scrollDepth: scrollDepth
+    gtag('event', 'scroll_depth', {
+      'event_category': 'engagement',
+      'event_label': 'Scroll Depth',
+      'scroll_depth': scrollDepth
     });
   }
 });
