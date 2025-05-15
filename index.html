@@ -1,66 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Arko's Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0M7P77Q1X4"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-  
-    gtag('config', 'G-0M7P77Q1X4');
-    </script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Arti's Blog</title>
+<!-- GA4 Script -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+   window.dataLayer = window.dataLayer || [];
+   function gtag() { dataLayer.push(arguments); }
+   gtag('js', new Date());
+   gtag('config', 'G-XXXXXXXXXX');
+</script>
 </head>
 <body>
-  <header>
-    <h1 data-aos="fade-down">Welcome to Arko's World 🌟</h1>
-    <p data-aos="fade-up">A journey through thoughts, code, and creativity</p>
-    <button class="toggle-btn" onclick="toggleDarkMode()">🌓 Mode</button>
-  </header>
-
-  <main>
-    <section data-aos="fade-right">
-      <h2>🎬 My Introduction Video</h2>
-      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
-    </section>
-
-    <section data-aos="fade-left">
-      <h2>📬 Get In Touch</h2>
-      <form onsubmit="return validateForm()">
-        <label>Name</label>
-        <input type="text" id="name" required />
-        
-        <label>Email</label>
-        <input type="email" id="email" required />
-        
-        <label>Message</label>
-        <textarea id="message" rows="4" required></textarea>
-        
-        <label>Attach a file</label>
-        <input type="file" class="file-input" />
-        
-        <button type="submit">Send Message 🚀</button>
-      </form>
-    </section>
-
-    <section data-aos="fade-up">
-      <h2>🔥 Fancy Button</h2>
-      <button onclick="alert('You clicked the magic button!')">Click Me</button>
-    </section>
-  </main>
-
-  <footer>
-    &copy; 2025 Arko's Blog. Made with ❤️ by Arko.
-  </footer>
-
-  <script src="script.js"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init();</script>
+<!-- Hero Section -->
+<header>
+<h1 data-aos="fade-down">Welcome to Arti’s World 🌍</h1>
+<button id="darkModeToggle">🌙 Toggle Dark Mode</button>
+</header>
+<!-- Video Section (Optional) -->
+<section data-aos="fade-right">
+<iframe id="iframe" width="560" height="315"
+     src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+     title="Introduction Video" frameborder="0"
+     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+     allowfullscreen>
+</iframe>
+</section>
+<!-- Contact Form Section -->
+<section data-aos="fade-left">
+<form id="contactForm">
+<label for="name">Name</label>
+<input type="text" id="name" required />
+<label for="email">Email</label>
+<input type="email" id="email" required />
+<label for="message">Message</label>
+<textarea id="message" required></textarea>
+<button type="submit">Send Message</button>
+</form>
+</section>
+<!-- Fancy Button Section -->
+<section data-aos="zoom-in">
+<button class="fancy-button">✨ Click Me</button>
+</section>
+<footer>
+<p>© 2025 Arti’s Blog. Made ❤️ by Arti.</p>
+</footer>
+<!-- External JS -->
+<script src="script.js"></script>
 </body>
 </html>
