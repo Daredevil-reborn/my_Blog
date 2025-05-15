@@ -4,50 +4,52 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Arti's Blog</title>
-<!-- GA4 Script -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-0M7P77Q1X4"></script>
+<link rel="stylesheet" href="style.css" />
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-077Q7ZZ1AJ"></script>
 <script>
-   window.dataLayer = window.dataLayer || [];
-   function gtag() { dataLayer.push(arguments); }
-   gtag('js', new Date());
-   gtag('config', 'G-0M7P77Q1X4');
+
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag(){dataLayer.push(arguments);}
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-077Q7ZZ1AJ');
 </script>
 </head>
 <body>
-<!-- Hero Section -->
 <header>
-<h1 data-aos="fade-down">Welcome to Arko’s World 🌍</h1>
-<button id="darkModeToggle">🌙 Toggle Dark Mode</button>
+<h1>Welcome to Arko's Blog 💫</h1>
+<button class="toggle-btn" onclick="toggleDarkMode()">🌙</button>
 </header>
-<!-- Video Section (Optional) -->
-<section data-aos="fade-right">
-<iframe id="iframe" width="560" height="315"
-     src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-     title="Introduction Video" frameborder="0"
-     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-     allowfullscreen>
-</iframe>
+<main>
+<section>
+<h2>🌟 A Journey through Thoughts</h2>
+<p>Welcome to my space where I pen down experiences, codes, and creativity.</p>
+<a href="https://www.youtube.com/embed/qN4ooNx77u0" target="_blank">
+<button>📺 Watch Video</button>
+</a>
 </section>
-<!-- Contact Form Section -->
-<section data-aos="fade-left">
-<form id="contactForm">
-<label for="name">Name</label>
-<input type="text" id="name" required />
-<label for="email">Email</label>
-<input type="email" id="email" required />
-<label for="message">Message</label>
-<textarea id="message" required></textarea>
+<section>
+<h2>📬 Contact Me</h2>
+<form>
+<input type="text" placeholder="Your Name" required />
+<input type="email" placeholder="Your Email" required />
+<textarea placeholder="Your Message" required></textarea>
+<input type="file" />
 <button type="submit">Send Message</button>
 </form>
 </section>
-<!-- Fancy Button Section -->
-<section data-aos="zoom-in">
-<button class="fancy-button">✨ Click Me</button>
+<section>
+<h2>🎞 Embedded Video</h2>
+<iframe src="https://www.youtube.com/embed/qN4ooNx77u0" frameborder="0" allowfullscreen></iframe>
 </section>
+</main>
 <footer>
 <p>© 2025 Arko’s Blog. Made ❤️ by Arko.</p>
 </footer>
-<!-- External JS -->
 <script src="script.js"></script>
 </body>
 </html>
+ 
