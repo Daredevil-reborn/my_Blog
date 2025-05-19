@@ -32,7 +32,7 @@ if (video) {
    });
  });
 }
-// Scroll depth
+/*// Scroll depth
 let scrollTracked = new Set();
 window.addEventListener('scroll', () => {
  const scrollPosition = window.scrollY + window.innerHeight;
@@ -47,7 +47,7 @@ window.addEventListener('scroll', () => {
      });
    }
  });
-});
+});*/
 // Outbound link clicks
 document.querySelectorAll('a[href^="http"]').forEach(link => {
  if (link.hostname !== window.location.hostname) {
